@@ -12,6 +12,7 @@ const webpack = require( 'webpack' );
 const { bundler, styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 const UglifyJsWebpackPlugin = require( 'uglifyjs-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = {
 	devtool: 'source-map',
@@ -47,12 +48,15 @@ module.exports = {
 		new CKEditorWebpackPlugin( {
 			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
 			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.js).
-			language: 'en',
-			additionalLanguages: 'all'
+			language: 'de',
+			additionalLanguages: ['en']
 		} ),
 		new webpack.BannerPlugin( {
 			banner: bundler.getLicenseBanner(),
 			raw: true
+		} ),
+		new MiniCssExtractPlugin( {
+			filename: "ckeditor.css"
 		} )
 	],
 
@@ -66,10 +70,10 @@ module.exports = {
 				test: /\.css$/,
 				use: [
 					{
-						loader: 'style-loader',
-						options: {
-							singleton: true
-						}
+						loader: MiniCssExtractPlugin.loader
+					},
+					{
+						loader: "css-loader"
 					},
 					{
 						loader: 'postcss-loader',
