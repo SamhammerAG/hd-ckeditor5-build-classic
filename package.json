@@ -40,7 +40,7 @@
     "@ckeditor/ckeditor5-theme-lark": "^11.0.0",
     "@ckeditor/ckeditor5-upload": "^10.0.2",
     "@ckeditor/ckeditor5-widget": "git+https://github.com/ckeditor/ckeditor5-widget.git#master",
-    "@samhammer/ckeditor5-simple-image-upload-plugin": "~1.0.1",
+    "@samhammer/ckeditor5-simple-image-upload-plugin": "~1.0.2",
     "css-loader": "~1.0.0",
     "mini-css-extract-plugin": "~0.4.2",
     "postcss-loader": "^3.0.0",
