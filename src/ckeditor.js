@@ -23,6 +23,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import SimpleUploadImagePlugin from '@samhammer/ckeditor5-simple-image-upload-plugin/src/simple-upload-image-plugin';
+import SimpleButton from '@samhammer/ckeditor5-simple-button-plugin/src/simple-button-plugin';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -44,6 +45,7 @@ ClassicEditor.builtinPlugins = [
 	List,
 	Table,
 	TableToolbar,
-	Highlight
+	Highlight,
+	SimpleButton
 ];
 

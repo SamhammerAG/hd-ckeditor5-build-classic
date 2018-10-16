@@ -1,6 +1,6 @@
 {
   "name": "@samhammer/hd-ckeditor5-build-classic",
-  "version": "11.1.1",
+  "version": "11.1.2",
   "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ckeditor5-build",
@@ -39,6 +39,7 @@
     "@ckeditor/ckeditor5-table": "^11.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^11.1.0",
     "@ckeditor/ckeditor5-upload": "^10.0.3",
+    "@samhammer/ckeditor5-simple-button-plugin": "^1.0.0",
     "@samhammer/ckeditor5-simple-image-upload-plugin": "^1.0.2",
     "css-loader": "^1.0.0",
     "mini-css-extract-plugin": "^0.4.2",
@@ -63,6 +64,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
     "preversion": "npm run build; if [ -n \"$(git status src/ckeditor.js build/ --porcelain)\" ]; then git add -u src/ckeditor.js build/ && git commit -m 'Internal: Build.'; fi"
   }
 }
