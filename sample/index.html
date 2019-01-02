@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>CKEditor 5 – classic editor build – development sample</title>
+	<link rel="stylesheet" type="text/css" href="../build/ckeditor.css">
 	<style>
 		body {
 			max-width: 800px;
@@ -28,7 +29,76 @@
 
 <script src="../build/ckeditor.js"></script>
 <script>
-	ClassicEditor.create( document.querySelector( '#editor' ) )
+	const colorList = [
+            'Red Pen',
+            'Green Pen',
+            'Blue Pen',
+            'Yellow Marker',
+            'Green Marker',
+            'Pink Marker',
+            'Blue Marker'
+        ].map(x => ({
+            model: x.replace(" ", ""),
+            class: x.toLowerCase().replace(" ", "-"),
+            title: x,
+            color: `var(--ck-highlight-${x.toLowerCase().replace(" ", "-")})`,
+            type: x.split(" ")[1].toLowerCase()
+        }));
+
+	ClassicEditor.create( document.querySelector( '#editor' ), {
+                language: "en",
+                toolbar: {
+                    items: [
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strikethrough',
+                        'alignment',
+                        'highlight',
+                        '|',
+                        'bulletedList',
+                        'numberedList',
+                        '|',
+                        'link',
+                        'imageUpload',
+                        'insertTable',
+                        '|',
+                        'undo',
+                        'redo',
+                        '|',
+                        'streamingCallButton',
+                        'recordSpeechButton'
+                    ]
+                },
+                alignment: {
+                    options: ['left', 'center', 'right', 'justify']
+                },
+                image: {
+                    toolbar: ['imageStyle:full', 'imageStyle:alignLeft', 'imageStyle:alignRight'],
+                    styles: ['full', 'alignLeft', 'alignRight']
+                },
+                highlight: {
+                    options: colorList
+                },
+                table: {
+                    contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+                },
+                simpleButton: [
+                    {
+                        name: "streamingCallButton",
+                        label: "startStreamingCall",
+                        //icon: StartStreamingCall,
+                        onClick: () => null
+                    },
+                    {
+                        name: "recordSpeechButton",
+                        label: "startSpeechRecord",
+                        //icon: StartSpeechRecordIcon,
+                        syncDisabledState: false,
+                        onClick: button => null
+                    }
+                ]
+            })
 		.then( editor => {
 			window.editor = editor;
 		} )
