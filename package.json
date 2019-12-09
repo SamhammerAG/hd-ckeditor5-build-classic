@@ -40,7 +40,9 @@
     "@ckeditor/ckeditor5-remove-format": "~16.0.0",
     "@ckeditor/ckeditor5-table": "~16.0.0",
     "@ckeditor/ckeditor5-theme-lark": "~16.0.0",
+    "@ckeditor/ckeditor5-ui": "~16.0.0",
     "@ckeditor/ckeditor5-upload": "~16.0.0",
+    "@ckeditor/ckeditor5-utils": "~16.0.0",
     "@samhammer/ckeditor5-simple-button-plugin": "~2.4.0",
     "@samhammer/ckeditor5-simple-image-upload-plugin": "~3.4.0",
     "css-loader": "^1.0.0",
@@ -72,9 +74,5 @@
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "preversion": "npm run build; if [ -n \"$(git status src/ckeditor.js build/ --porcelain)\" ]; then git add -u src/ckeditor.js build/ && git commit -m 'Internal: Build.'; fi"
-  },
-  "dependencies": {
-    "@ckeditor/ckeditor5-ui": "~16.0.0",
-    "@ckeditor/ckeditor5-utils": "~16.0.0"
   }
 }
