@@ -21,10 +21,11 @@ import List from '@ckeditor/ckeditor5-list/src/list';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import SimpleUploadImagePlugin from '@samhammer/ckeditor5-simple-image-upload-plugin/src/simple-upload-image-plugin';
 import SimpleButton from '@samhammer/ckeditor5-simple-button-plugin/src/simple-button-plugin';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
+import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -47,7 +48,7 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	RemoveFormat,
-	Highlight,
-	SimpleButton
+	SimpleButton,
+	FontColor,
+	FontBackgroundColor
 ];
-
